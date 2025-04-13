@@ -549,7 +549,8 @@ gap: 2px;
     .divlogin  {
         font-size: 8px;
         font-weight: normal;
-        padding:0px 9px 0px 9px;
+
+        margin-bottom: 1rem;
       }
 
     
@@ -692,7 +693,7 @@ gap: 2px;
     }
     .pz{
         font-size: 69%;
-
+        margin: 0%;
     }
     .header {
        
@@ -717,7 +718,7 @@ gap: 2px;
 
 
       .header5{
-        margin: 0;
+        margin-top: 5rem;
       }
 
     .divp6 {
@@ -1211,3 +1212,27 @@ gap: 2px;
 }
 
 
+
+
+
+@keyframes slideInUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  #page3 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+  }
+  
+  #page3:target {
+    animation: slideInUp 1s ease forwards;
+  }
+  
