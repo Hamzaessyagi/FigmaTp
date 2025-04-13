@@ -1068,64 +1068,96 @@ gap: 2px;
 .login-container {
     margin-left: auto;
     position: relative;
-}
-
-
-.divlogin {
+  }
+  
+  .divlogin {
     background-color: #0066cc;
     border: none;
-
     border-radius: 4px;
     padding: 5px 15px;
     cursor: pointer;
     display: inline-block;
-}
-
-.Logg1 {
+  }
+  
+  .Logg1 {
     margin: 0;
     color: white;
-
-}
-
-.login-toggle {
+  }
+  
+  .login-toggle {
     display: none;
-}
-
-.login-form {
+  }
+  
+  /* Nouveau style pour le popup amélioré */
+  .login-popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
     display: none;
-    position: absolute;
-    right: 0;
-    top: 113%;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  .lb{
+    color: #20469f;
+  }
+  
+  .login-popup {
     background: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    z-index: 100;
-    width: 250px;
-}
-
-.login-input {
-    display: block;
-    width: 90%;
-    padding: 8px;
-    margin-bottom: 10px;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    animation: login 0.3s ease;
+    position: relative;
+    text-align: center;
+  }
+  
+  .login-input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-.submit-btn {
+  }
+  
+  .submit-btn {
+    padding: 10px 20px;
     background-color: #0066cc;
     color: white;
     border: none;
-    padding: 8px 15px;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     width: 100%;
-}
-
-.login-toggle:checked ~ .login-form {
-    display: block;
-}
+  }
+  
+  .close-login {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  /* Animation */
+  @keyframes login {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Affiche le popup quand la checkbox est cochée */
+  .login-toggle:checked ~ .login-popup-container {
+    display: flex;
+  }
 /* Styles pour la fenêtre d'aide */
 .help-toggle {
     display: none;
